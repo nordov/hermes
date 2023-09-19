@@ -31,8 +31,8 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 
 # Elastic Beanstalk issue with Psych
-gem "psych"
-gem "yaml_db"
+gem 'psych', '~> 2.0', '>= 2.0.17'
+# gem "yaml_db"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
