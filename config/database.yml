@@ -25,14 +25,14 @@ development:
   <<: *default
   database: hermes_development
 
-production:
+staging:
   <<: *default
-  encoding: utf8 
-  database: <%= ENV['RDS_DB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["PGHOST"] %>
+  database: <%= ENV["PGDATABASE"] %>
+  username: <%= ENV["PGUSER"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  port: <%= ENV["PGPORT"] %>
 
 
   # The specified database role being used to connect to postgres.
@@ -91,6 +91,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
   database: hermes_production
   username: hermes
   password: <%= ENV["HERMES_DATABASE_PASSWORD"] %>
