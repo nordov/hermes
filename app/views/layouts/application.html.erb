@@ -1,46 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @title %></title>
+    <title>Hermes</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
   </head>
 
   <body>
-    <%= render 'layouts/header', cities: @company.cities  %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <main>
-      <% if @page_title %>
-        <%= render 'layouts/blocks/page_title', page_title: @page_title %>
-      <% end %>
-      <%= yield %>
-    </main>
-    <%= render 'layouts/footer' %>
-
-    <!-- JS Piggy Power! -->
-    <%= javascript_include_tag "/assets/js/vendor/jquery-3.6.0.min" %>
-    <%= javascript_include_tag "/assets/js/backToTop" %>
-    <%= javascript_include_tag "/assets/js/vendor/waypoints.min" %>
-    <%= javascript_include_tag "/assets/js/bootstrap.bundle.min" %>
-    <%= javascript_include_tag "/assets/js/meanmenu" %>
-    <%= javascript_include_tag "/assets/js/swiper-bundle.min" %>
-    <%= javascript_include_tag "/assets/js/owl.carousel.min" %>
-    <%= javascript_include_tag "/assets/js/magnific-popup.min" %>
-    <%= javascript_include_tag "/assets/js/parallax.min" %>
-    <%= javascript_include_tag "/assets/js/jquery-ui-slider-range" %>
-    <%= javascript_include_tag "/assets/js/nice-select.min" %>
-    <%= javascript_include_tag "/assets/js/counterup.min" %>
-    <%= javascript_include_tag "/assets/js/ajax-form" %>
-    <%= javascript_include_tag "/assets/js/wow.min" %>
-    <%= javascript_include_tag "/assets/js/isotope.pkgd.min" %>
-    <%= javascript_include_tag "/assets/js/imagesloaded.pkgd.min" %>
-    <%= javascript_include_tag "/assets/js/rangeslider-js.min" %>
-    <%= javascript_include_tag "/assets/js/main" %>
+    <%= yield %>
   </body>
 </html>
